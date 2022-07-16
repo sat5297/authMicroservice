@@ -53,9 +53,9 @@ const registerEmployee = async (body) => {
                 const hashedPassword = await bcrypt.hash(body.pass, 10);
                 await loginCollection.insertOne({empID : body.empID, pass : hashedPassword}).then((res) => {
                     if(res.acknowledged){
-                        resolve("Employee Registered Successfully.");
+                        resolve("Employee Registered Successfully in Authentication Database.");
                     }else{
-                        resolve("Unable to register employee");
+                        resolve("Unable to register employee in Authentication Database.");
                     }
                 });
             }catch{
@@ -83,11 +83,11 @@ const updatePassword = async (body) => {
                     try{
                         await loginCollection.findOneAndUpdate(searchOptions, {$set: { pass : newHashedPassword}}).then((res) => {
                             console.log(res);
-                            resolve("Password Update Successfully");
+                            resolve("Password Update Successfully in Authentication Database.");
                         });
                     }
                     catch{
-                        resolve("Unable to update Password.");
+                        resolve("Unable to update Password in Authentication Database.");
                     }
                 }
                 else{
@@ -117,7 +117,7 @@ const deleteEmployee = async (body) => {
                     if(res.acknowledged){
                         resolve("Employee deleted from Authentication Database Successfully.");
                     }else{
-                        reject("Unable to delete the employee.");
+                        reject("Unable to delete the employee from Authentication Database.");
                     }
                 });
             }
