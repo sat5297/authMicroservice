@@ -4,8 +4,6 @@ if(process.env.NODE_ENV !== 'production'){
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const bodyParser = require('body-parser');
-const { resolve, reject } = require('promise');
 
 const client = new MongoClient(process.env.DATABASE_URL, {
     useNewUrlParser: true, useUnifiedTopology: true 
@@ -50,7 +48,7 @@ const registerEmployee = async (body) => {
         client.connect(async err => {
             const loginCollection = client.db("authentication").collection("login");
             try{
-                const hashedPassword = await bcrypt.hash(body.pass, 10);
+                const hashedPassword = await bcrypt.hash(body.empID, 10);
                 await loginCollection.insertOne({empID : body.empID, pass : hashedPassword}).then((res) => {
                     if(res.acknowledged){
                         resolve("Employee Registered Successfully in Authentication Database.");
