@@ -14,4 +14,7 @@ router.route('/register')
 router.route('/update')
         .post(loginController.updatePassword)
 
+router.route('/delete')
+        .post(loginController.deleteEmployee)
+
 module.exports = router;

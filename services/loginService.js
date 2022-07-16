@@ -20,9 +20,15 @@ const updatePassword = (body) => {
     return updatePassword;
 };
 
+const deleteEmployee = (body) => {
+    let deleteEmployee = loginRepository.deleteEmployee(body);
+    return deleteEmployee;
+}
+
 module.exports = {
     loginEmployee,
     logoutEmployee,
     registerEmployee,
-    updatePassword
+    updatePassword,
+    deleteEmployee
 }

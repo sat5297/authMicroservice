@@ -21,9 +21,15 @@ const updatePassword = async (req,res) => {
     res.send(updatePassword);
 };
 
+const deleteEmployee = async(req,res) => {
+    const deleteEmployee = await loginService.deleteEmployee(req.body);
+    res.send(deleteEmployee);
+}
+
 module.exports = {
     loginEmployee,
     logoutEmployee,
     registerEmployee,
-    updatePassword
+    updatePassword,
+    deleteEmployee
 };
