@@ -3,7 +3,7 @@ const router = express.Router();
 const loginController = require('../controllers/loginController');
 
 router.route('/login')
-        .post(loginController.loginEmployee)
+        .get(loginController.loginEmployee)
 
 router.route('/logout')
         .post(loginController.logoutEmployee)
@@ -12,9 +12,9 @@ router.route('/register')
         .post(loginController.registerEmployee)
 
 router.route('/update')
-        .post(loginController.updatePassword)
+        .patch(loginController.updatePassword)
 
 router.route('/delete')
-        .post(loginController.deleteEmployee)
+        .delete(loginController.deleteEmployee)
 
 module.exports = router;
