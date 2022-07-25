@@ -9,5 +9,10 @@ It includes the following functionalities:
     <li>The manager can register a new employee for authentication.</li>
   </ul>
 
+# Login Activity
+<img src="https://github.com/sat5297/authMicroservice/blob/main/LoginActivity.jpeg" alt="Login" />
+
+# Change Password Activity
+<img src="https://github.com/sat5297/authMicroservice/blob/main/changePassword.jpeg" alt="Change Password" />
 
 <a href="https://documenter.getpostman.com/view/10075006/UzQyq3fs" > <h4> API Documentation </h4> </a>
