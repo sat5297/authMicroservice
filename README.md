@@ -9,7 +9,7 @@ It includes the following functionalities:
     <li>The manager can register a new employee for authentication.</li>
   </ul>
 
-<a href="https://documenter.getpostman.com/view/10075006/UzQyq3fs" > <h2> API Documentation </h2> </a>
+<h2> <a href="https://documenter.getpostman.com/view/10075006/UzQyq3fs" > API Documentation </a> </h2>
 
 
 # Login Activity
